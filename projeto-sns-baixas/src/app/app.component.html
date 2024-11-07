@@ -1,0 +1,30 @@
+<div class="sidebar" [class.expanded]="isExpanded">
+    <button class="toggle-btn" (click)="toggleSidebar()">
+        <!-- Ícone de Expandir/Retrair -->
+        <span *ngIf="!isExpanded">▶</span>
+        <span *ngIf="isExpanded">◀</span>
+    </button>
+
+    <!-- Itens do Menu -->
+    <ul class="menu">
+        <li>
+            <a routerLink="/dashboard">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text" *ngIf="isExpanded">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/emitir-baixa">
+                <i class="icon-baixa"></i>
+                <span class="menu-text" *ngIf="isExpanded">Emitir Baixa</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/consultar-baixas">
+                <i class="icon-consulta"></i>
+                <span class="menu-text" *ngIf="isExpanded">Consultar Baixas</span>
+            </a>
+        </li>
+        <!-- Adicione mais itens conforme necessário -->
+    </ul>
+</div>

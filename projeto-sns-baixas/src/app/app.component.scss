@@ -1,0 +1,88 @@
+/* sidebar.component.scss */
+
+.sidebar {
+  margin: 10px;
+  width: 60px; /* Largura retraída */
+  height: calc(100vh - 20px); /* Altura total da tela */
+  background-color: rgb(1, 98, 76);
+  padding: 10px;
+  box-sizing: border-box; /* Inclui padding/border dentro do tamanho do elemento */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; /* Barra lateral fixa no lado esquerdo da tela */
+
+  border-radius: 10px;
+  transition: width 0.3s ease; /* Transição suave para expansão/retração */
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 5px rgba(122, 122, 122, 0.8);
+
+  &.expanded {
+    width: 200px; /* Largura expandida */
+  }
+
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 0; /* Apenas padding interno */
+    outline: none;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove qualquer margem do ul */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      width: 40px;
+      height: 40px;
+
+      a {
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 15px 10px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #ffffff;
+        }
+
+        .icon-dashboard,
+        .icon-baixa,
+        .icon-consulta {
+          font-size: 20px;
+          width: 20px;
+          margin-right: 10px;
+        }
+
+        .menu-text {
+          display: none;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  /* Exibe o texto dos itens de menu quando expandido */
+  &.expanded .menu-text {
+    display: inline;
+    color: white;
+  }
+}
