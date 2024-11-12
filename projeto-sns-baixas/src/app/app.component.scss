@@ -1,5 +1,4 @@
 /* sidebar.component.scss */
-
 .sidebar {
   margin: 10px;
   width: 60px; /* Largura retraída */
@@ -11,7 +10,6 @@
   flex-direction: column;
   align-items: center;
   position: fixed; /* Barra lateral fixa no lado esquerdo da tela */
-
   border-radius: 10px;
   transition: width 0.3s ease; /* Transição suave para expansão/retração */
   backdrop-filter: blur(3px);
@@ -22,14 +20,42 @@
   }
 
   .toggle-btn {
+    height: 30px;
+    width: 30px;
     background: none;
     border: none;
     color: #ecf0f1;
     font-size: 20px;
     cursor: pointer;
     margin: 0;
-    padding: 10px 0; /* Apenas padding interno */
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0; /* Apenas padding interno */
     outline: none;
+
+    .ico{
+      transform: rotate(0deg);
+      transition: 0.3s ease;
+      height: 30px;
+      width: 30px;
+      svg{
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+      }
+
+      &.expanded{
+        transform: rotate(180deg);
+        svg{
+          .a-top{
+            transform: translateY(-6px);
+          }
+          .b-bot{
+            transform: translateY(6px);
+          }
+        }
+      }
+    }
   }
 
   .menu {
@@ -40,49 +66,70 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 20px;
 
     li {
-      width: 40px;
+      display: flex;
+      flex-direction: row;
+      border-radius: 50px;
+      width: 100%;
       height: 40px;
+      transition: 0.3s ease;
 
-      a {
+      svg{
+        height: 25px;
+        width: 25px;
+      }
+
+      a{
         height: 100%;
         width: 100%;
         border-radius: 100%;
         box-sizing: border-box;
         display: flex;
+        color: white;
+        justify-content: center;
         align-items: center;
-        color: #ecf0f1;
         text-decoration: none;
-        padding: 15px 10px;
+        padding: 0 0;
         font-size: 16px;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: #ffffff;
-        }
-
-        .icon-dashboard,
-        .icon-baixa,
-        .icon-consulta {
-          font-size: 20px;
-          width: 20px;
-          margin-right: 10px;
-        }
 
         .menu-text {
-          display: none;
-          white-space: nowrap;
+          opacity: 0;
+          overflow: hidden;
+          flex: 1;
+          text-align: center;
+
+          &.expanded{
+            opacity: 1;
+          }
+        }
+      }
+      &:hover {
+        background-color: #ffffff;
+        a {
+          color: rgb(1, 98, 76) !important;
+        }
+
+        svg{
+          fill: rgb(1, 98, 76) !important;
         }
       }
     }
   }
 
   /* Exibe o texto dos itens de menu quando expandido */
-  &.expanded .menu-text {
-    display: inline;
-    color: white;
+  &.expanded{
+    .menu{
+      a{
+        padding: 0 10px !important;
+      }
+
+      svg{
+        height: 25px;
+        width: 25px;
+      }
+    }
   }
 }
