@@ -106,8 +106,9 @@
           }
         }
       }
+
       &:hover {
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.7);
         a {
           color: rgb(1, 98, 76) !important;
         }
@@ -116,6 +117,17 @@
           fill: rgb(1, 98, 76) !important;
         }
       }
+    }
+  }
+
+  .selected{
+    background-color: #ffffff;
+    a {
+      color: rgb(1, 98, 76) !important;
+    }
+
+    svg{
+      fill: rgb(1, 98, 76) !important;
     }
   }
 
@@ -131,5 +143,17 @@
         width: 25px;
       }
     }
+  }
+}
+
+.main-container{
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 80px 10px 80px;
+  box-sizing: border-box;
+
+  .working-area{
+    width: 100%;
+    height: 100%;
   }
 }

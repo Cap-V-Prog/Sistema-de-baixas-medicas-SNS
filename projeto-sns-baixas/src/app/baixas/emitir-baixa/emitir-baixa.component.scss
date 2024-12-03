@@ -1,0 +1,130 @@
+.section{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  height: 100%;
+}
+.emitir-baixa-container {
+  height: calc(100% - 40px);
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    color: #01624c;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        &:focus {
+          outline: none;
+          border-color: #01624c;
+        }
+      }
+    }
+
+    button {
+      background-color: #01624c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #014d3b;
+      }
+
+      &:disabled {
+        background-color: #bbb;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.medical-leave-table {
+  flex: 1;
+
+  h2 {
+    color: #01624c;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #01624c;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #f9f9f9; /* Cor clara */
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffffff; /* Branco */
+    }
+
+    tbody tr:hover {
+      background-color: #cce4ff; /* Azul claro suave */
+      cursor: pointer; /* Indicador de clique */
+    }
+
+    td {
+      font-size: 14px;
+
+      .pending {
+        font-weight: bold;
+        color: #d9534f;
+      }
+
+      .pending:not(.pending) {
+        color: #5cb85c;
+      }
+    }
+  }
+}
