@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MedicalLeaveService} from "../../services/medical-leave.service";
-import {DatePipe, NgForOf} from "@angular/common";
+import {DatePipe, NgClass, NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-emitir-baixa',
@@ -9,7 +9,8 @@ import {DatePipe, NgForOf} from "@angular/common";
   imports: [
     ReactiveFormsModule,
     DatePipe,
-    NgForOf
+    NgForOf,
+    NgClass
   ],
   templateUrl: './emitir-baixa.component.html',
   styleUrl: './emitir-baixa.component.scss'
