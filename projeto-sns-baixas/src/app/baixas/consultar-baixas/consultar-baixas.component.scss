@@ -1,5 +1,4 @@
 .consultar-baixas-container {
-  padding: 2px;
   border-radius: 10px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -22,7 +21,6 @@
       width: 100%;
       border-collapse: collapse;
       background-color: #fff;
-      border: 1px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
 
@@ -30,7 +28,6 @@
         input {
           width: 100%;
           padding: 8px 10px;
-          border: 1px solid #ddd;
           border-radius: 5px;
           font-size: 14px;
           box-sizing: border-box;

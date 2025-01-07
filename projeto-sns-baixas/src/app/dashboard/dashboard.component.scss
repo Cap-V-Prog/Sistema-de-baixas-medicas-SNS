@@ -79,7 +79,6 @@
         width: 100%;
         border-collapse: collapse;
         background-color: #fff;
-        border: 1px solid #ddd;
         border-radius: 8px;
         overflow: hidden;
 
@@ -95,6 +94,12 @@
           padding: 12px;
           border-bottom: 1px solid #ddd;
           font-size: 14px;
+        }
+
+        tr:last-child {
+          td{
+            border-bottom: none;
+          }
         }
 
         tbody tr:nth-child(odd) {
