@@ -1,9 +1,10 @@
-.section{
+.section {
   display: flex;
   flex-direction: row-reverse;
   gap: 10px;
   height: 100%;
 }
+
 .emitir-baixa-container {
   height: calc(100% - 40px);
   flex: 1;
@@ -27,17 +28,20 @@
     .form-group {
       display: flex;
       flex-direction: column;
+
       label {
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 5px;
       }
+
       input,
       textarea {
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 14px;
+
         &:focus {
           outline: none;
           border-color: #01624c;
@@ -62,6 +66,42 @@
       &:disabled {
         background-color: #bbb;
         cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.patient-suggestions {
+  margin-top: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #cce4ff;
+      }
+
+      .patient-name {
+        font-weight: bold;
+      }
+
+      .patient-sns {
+        font-style: italic;
+        color: #555;
       }
     }
   }
@@ -101,29 +141,34 @@
     }
 
     tr:nth-child(odd) {
-      background-color: #f9f9f9; /* Cor clara */
+      background-color: #f9f9f9;
     }
 
     tr:nth-child(even) {
-      background-color: #ffffff; /* Branco */
+      background-color: #ffffff;
     }
 
     tbody tr:hover {
-      background-color: #cce4ff; /* Azul claro suave */
-      cursor: pointer; /* Indicador de clique */
+      background-color: #cce4ff;
+      cursor: pointer;
     }
 
     td {
       font-size: 14px;
-
-      .pending {
-        font-weight: bold;
-        color: #d9534f;
-      }
-
-      .pending:not(.pending) {
-        color: #5cb85c;
-      }
     }
   }
+}
+
+.status-issued {
+  color: #01624c;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.clickable {
+  cursor: pointer;
 }

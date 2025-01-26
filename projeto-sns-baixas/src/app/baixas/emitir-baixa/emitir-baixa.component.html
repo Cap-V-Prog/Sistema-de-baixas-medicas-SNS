@@ -3,15 +3,23 @@
         <h1>Emitir Baixa Médica</h1>
         <form [formGroup]="medicalLeaveForm" (ngSubmit)="submitMedicalLeave()">
             <div class="form-group">
-                <label for="patientName">Nome do Paciente</label>
+                <label for="sns">Número de SNS do Paciente</label>
                 <input
                         type="text"
-                        id="patientName"
-                        formControlName="patientName"
-                        placeholder="Digite o nome do paciente"
+                        id="sns"
+                        formControlName="sns"
+                        placeholder="Digite o número do SNS"
+                        (input)="onSnsChange(medicalLeaveForm.value.sns)"
                         required
-                        [ngClass]=""
                 />
+                <div *ngIf="filteredPatients.length > 0" class="patient-suggestions">
+                    <ul>
+                        <li *ngFor="let patient of filteredPatients">
+                            <span class="patient-name">{{ patient.nome }}</span>
+                            <span class="patient-sns">{{ patient.numeroSNS }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="form-group">
@@ -50,24 +58,27 @@
             </button>
         </form>
     </div>
+
     <div class="medical-leave-table">
-        <h2>Registros de Baixas</h2>
+        <h2>Baixas Médicas do Médico</h2>
         <table>
             <thead>
             <tr>
-                <th>Nome do Paciente</th>
-                <th>Data da Última Baixa</th>
-                <th>Baixas Pendentes</th>
+                <th>Número SNS</th>
+                <th>Paciente</th>
+                <th>Data de Emissão</th>
+                <th>Data de Término</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let record of medicalLeaveRecords">
-                <td>{{ record.patientName }}</td>
-                <td>{{ record.lastLeaveDate | date: 'dd/MM/yyyy' }}</td>
-                <td>
-              <span [class.pending]="record.hasPendingLeaves">
-                {{ record.hasPendingLeaves ? 'Sim' : 'Não' }}
-              </span>
+            <tr *ngFor="let sickLeave of sickLeaves" (click)="fillSnsField(sickLeave)" [class.clickable]="!sickLeave.isIssued">
+                <td>{{ sickLeave.patient.id }}</td>
+                <td>{{ sickLeave.patient.name }}</td>
+                <td>{{ sickLeave.isIssued ? (sickLeave.period.start | date: 'dd/MM/yyyy') : '' }}</td>
+                <td>{{ sickLeave.isIssued ? (sickLeave.period.end | date: 'dd/MM/yyyy') : '' }}</td>
+                <td [ngClass]="{'status-issued': sickLeave.isIssued, 'status-pending': !sickLeave.isIssued}">
+                    {{ sickLeave.isIssued ? 'Emitido' : 'Pendente' }}
                 </td>
             </tr>
             </tbody>

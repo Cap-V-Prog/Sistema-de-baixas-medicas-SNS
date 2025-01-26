@@ -5,4 +5,5 @@ export interface Patient {
   bilheteIdentidade: string;
   dataNascimento: Date;
   numeroSNS: string;
+  medicoId: string; // Novo campo para associar o paciente ao médico
 }

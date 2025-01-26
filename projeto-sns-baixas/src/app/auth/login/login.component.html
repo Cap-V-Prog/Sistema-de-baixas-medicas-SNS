@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="login-card">
+        <h1>Bem-vindo</h1>
+        <h2>Faça login para continuar</h2>
+        <form (submit)="onSubmit()">
+            <div class="form-group">
+                <label for="utente">Número de Utente</label>
+                <input id="utente" type="text" [(ngModel)]="utente" name="utente" required pattern="\d{9}" title="O número de utente deve ter 9 dígitos." />
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input id="password" type="password" [(ngModel)]="password" name="password" required />
+            </div>
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+        <p class="register-link">
+            Não tem conta? <a (click)="navigateToRegister()">Registe-se aqui</a>
+        </p>
+    </div>
+</div>

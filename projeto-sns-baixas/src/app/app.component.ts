@@ -13,11 +13,4 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  Selected:'Emit'|'Consult'|'Dashboard' = "Dashboard";
-  isExpanded = false;
-
-  toggleSidebar() {
-    this.isExpanded = !this.isExpanded;
-  }
-  title = 'projeto-sns-baixas';
 }
