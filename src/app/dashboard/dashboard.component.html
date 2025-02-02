@@ -1,0 +1,67 @@
+<div class="dashboard-container">
+    <h1>Estatísticas do Médico - SNS</h1>
+    <h2>Bem-vindo(a) à visão geral do desempenho</h2>
+
+    <div class="stats-overview">
+        <div class="card">
+            <h3>Total de baixas</h3>
+            <p class="value">{{backoffice.totalLeaves}}</p>
+        </div>
+        <div class="card">
+            <h3>Total de baixas emitidas</h3>
+            <p class="value">{{backoffice.EmitedLeaves}}</p>
+        </div>
+        <div class="card">
+            <h3>Baixas pendentes</h3>
+            <p class="value pending">{{backoffice.pendingLeaves}}</p>
+        </div>
+        <div class="card">
+            <h3>Índice de Satisfação</h3>
+            <p class="value">95%</p>
+        </div>
+    </div>
+
+    <div class="charts-section">
+        <h3>Baixas emitidas por mês</h3>
+        <div class="chart">
+            <!-- Aqui pode usar uma biblioteca de gráficos como Chart.js -->
+            <canvas id="chartSickLeaves"></canvas>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h3>Tabela de Consultas Recentes</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Paciente</th>
+                    <th>Especialidade</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>10/01/2024</td>
+                    <td>João Silva</td>
+                    <td>Clínica Geral</td>
+                    <td>Concluído</td>
+                </tr>
+                <tr>
+                    <td>12/01/2024</td>
+                    <td>Maria Oliveira</td>
+                    <td>Cardiologia</td>
+                    <td>Pendente</td>
+                </tr>
+                <tr>
+                    <td>15/01/2024</td>
+                    <td>Roberto Costa</td>
+                    <td>Ortopedia</td>
+                    <td>Concluído</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

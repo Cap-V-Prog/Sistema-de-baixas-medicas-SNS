@@ -1,0 +1,120 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    color: #01624c;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .stats-overview {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1;
+      max-width: 200px;
+
+      h3 {
+        font-size: 16px;
+        color: #01624c;
+        margin-bottom: 10px;
+      }
+
+      .value {
+        font-size: 24px;
+        font-weight: bold;
+
+        &.pending {
+          color: #d9534f;
+        }
+      }
+    }
+  }
+
+  .charts-section {
+    margin-bottom: 40px;
+    text-align: center;
+
+    h3 {
+      color: #01624c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .chart {
+      max-width: 600px;
+      margin: 0 auto;
+      canvas {
+        width: 100%;
+      }
+    }
+  }
+
+  .table-section {
+    .table-container {
+      overflow-x: auto;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+
+        th {
+          background-color: #01624c;
+          color: #fff;
+          text-align: left;
+          padding: 12px;
+          font-size: 14px;
+        }
+
+        td {
+          padding: 12px;
+          border-bottom: 1px solid #ddd;
+          font-size: 14px;
+        }
+
+        tr:last-child {
+          td{
+            border-bottom: none;
+          }
+        }
+
+        tbody tr:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+
+        tbody tr:nth-child(even) {
+          background-color: #fff;
+        }
+
+        tbody tr:hover {
+          background-color: #cce4ff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

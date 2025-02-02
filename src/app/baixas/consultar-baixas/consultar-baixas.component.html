@@ -1,0 +1,59 @@
+<div class="consultar-baixas-container">
+  <h1>Consultar Baixas</h1>
+
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Paciente</th>
+        <th>Data</th>
+        <th>Diagnóstico</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <th><input type="text" placeholder="Filtrar por paciente" (input)="filterTable($event, 'patient.name')" /></th>
+        <th><input type="date" (input)="filterTable($event, 'createdAt')" /></th>
+        <th><input type="text" placeholder="Filtrar por diagnóstico" (input)="filterTable($event, 'diagnosis')" /></th>
+        <th><input type="text" placeholder="Filtrar por status" (input)="filterTable($event, 'status')" /></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let sickLeave of filteredSickLeaves" (click)="openEditModal(sickLeave)">
+        <td>{{ sickLeave.patient.name }}</td>
+        <td>{{ sickLeave.createdAt| date:'dd/MM/yyyy'}}</td>
+        <td>{{ sickLeave.diagnosis }}</td>
+        <td>{{ sickLeave.status }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Modal de edição -->
+<div class="modal" *ngIf="selectedSickLeave">
+  <div class="modal-content">
+    <h2>Editar Baixa</h2>
+
+    <label>Paciente:</label>
+    <input type="text" [(ngModel)]="selectedSickLeave.patient.name" disabled />
+
+    <label>Data:</label>
+    <input type="date" [(ngModel)]="selectedSickLeave.createdAt" />
+
+    <label>Diagnóstico:</label>
+    <input type="text" [(ngModel)]="selectedSickLeave.diagnosis" />
+
+    <label>Status:</label>
+    <select [(ngModel)]="selectedSickLeave.status">
+      <option value="Em análise">Em análise</option>
+      <option value="Aprovado">Aprovado</option>
+      <option value="Rejeitado">Rejeitado</option>
+    </select>
+
+    <div class="modal-actions">
+      <button (click)="updateSickLeave()">Atualizar</button>
+      <button class="cancel" (click)="closeEditModal()">Cancelar</button>
+    </div>
+  </div>
+</div>

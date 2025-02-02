@@ -1,0 +1,251 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(1, 98, 76);
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  height: 36px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-section {
+  position: relative;
+  text-align: center;
+  background-color: #01624c;
+  padding: 20px;
+}
+
+.primary-btn {
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  background-color: #ecf0f1;
+  color: rgb(1, 98, 76);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-size: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Other Sections */
+.info-cards {
+  display: flex;
+  padding: 150px;
+  background-color: rgb(240, 240, 240);
+  justify-content: center;
+  align-items: center;
+}
+
+.info-cards .wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.card {
+  text-align: center;
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+}
+
+.extra-section, .contact-section {
+  text-align: center;
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extra-section .wrapper, .contact-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.extra-section p, .contact-section p {
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(1, 98, 76);
+  padding: 10px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.formulario input {
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  box-sizing: border-box;
+  outline: 2px solid rgb(1, 98, 76);
+  outline-offset: -2px;
+  width: 100%;
+}
+
+.formulario button {
+  height: 35px;
+  color: #fff;
+  padding: 10px 20px;
+  background: #014d3b;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info-suport {
+  position: absolute;
+  bottom: -75px;
+  font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: static;
+    transform: none;
+    gap: 15px;
+  }
+
+  .info-cards {
+    padding: 50px;
+  }
+
+  .info-cards .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .extra-section, .contact-section {
+    padding: 50px;
+  }
+
+  .formulario {
+    flex-direction: column;
+  }
+}

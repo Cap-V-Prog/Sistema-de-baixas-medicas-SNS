@@ -1,0 +1,93 @@
+<div class="section">
+    <div class="emitir-baixa-container">
+        <h1>Emitir Baixa Médica</h1>
+        <div class="form">
+            <div class="form-group">
+              <label for="sns">Número de SNS do Paciente</label>
+              <input
+                type="text"
+                id="sns"
+                [(ngModel)]="sns"
+                name="sns"
+                placeholder="Digite o número do SNS"
+                (input)="onSnsChange(sns)"
+                maxlength="9"
+                required
+              />
+              <div *ngIf="filteredPatients.length > 0" class="patient-suggestions">
+                <ul>
+                  <li *ngFor="let patient of filteredPatients" (click)="fillSnsField2(patient)">
+                    <span class="patient-name">{{ patient.nome }}</span>
+                    <span class="patient-sns">{{ patient.numeroSNS }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="diagnosis">Diagnóstico</label>
+              <textarea
+                id="diagnosis"
+                [(ngModel)]="diagnosis"
+                name="diagnosis"
+                rows="3"
+                placeholder="Descrição do diagnóstico"
+                (input)="isFormValid()"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="startDate">Data de Início</label>
+              <input type="date" (input)="isFormValid()" id="startDate" [(ngModel)]="startDate" name="startDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="endDate">Data de Término</label>
+              <input type="date" (input)="isFormValid()" id="endDate" [(ngModel)]="endDate" name="endDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="recommendations">Recomendações</label>
+              <textarea
+                id="recommendations"
+                [(ngModel)]="recommendations"
+                name="recommendations"
+                rows="3"
+                placeholder="Recomendações para o paciente"
+                (input)="isFormValid()"
+              ></textarea>
+            </div>
+
+            <button type="submit" (click)="submitMedicalLeave()" [disabled]="!isFormValid()">
+              Emitir Baixa
+            </button>
+        </div>
+    </div>
+
+    <div class="medical-leave-table">
+        <h2>Baixas Médicas do Médico</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Número SNS</th>
+                <th>Paciente</th>
+                <th>Data de Emissão</th>
+                <th>Data de Término</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sickLeave of sickLeaves" (click)="fillSnsField(sickLeave)" [class.clickable]="!sickLeave.isIssued">
+                <td>{{ sickLeave.patient.id }}</td>
+                <td>{{ sickLeave.patient.name }}</td>
+                <td>{{ sickLeave.isIssued ? (sickLeave.period.start) : '' }}</td>
+                <td>{{ sickLeave.isIssued ? (sickLeave.period.end) : '' }}</td>
+                <td [ngClass]="{'status-issued': sickLeave.isIssued, 'status-pending': !sickLeave.isIssued}">
+                    {{ sickLeave.isIssued ? 'Emitido' : 'Pendente' }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

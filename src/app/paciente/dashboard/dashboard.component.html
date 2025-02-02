@@ -1,0 +1,83 @@
+<div class="patient-dashboard">
+    <!-- Header -->
+    <div class="header">
+      <h1>Bem-vindo, {{ patientName }}</h1>
+      <p>Verifique as suas baixas médicas ou faça uma nova solicitação.</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters">
+        <button
+                (click)="setFilter('all')"
+                [ngClass]="{ active: currentFilter === 'all' }"
+        >
+            Todas
+        </button>
+        <button
+                (click)="setFilter('active')"
+                [ngClass]="{ active: currentFilter === 'active' }"
+        >
+            Ativas
+        </button>
+        <button
+                (click)="setFilter('expired')"
+                [ngClass]="{ active: currentFilter === 'expired' }"
+        >
+            Expiradas
+        </button>
+        <button
+                (click)="setFilter('pending')"
+                [ngClass]="{ active: currentFilter === 'pending' }"
+        >
+            Pendentes
+        </button>
+    </div>
+
+    <!-- Lista de Baixas Médicas -->
+    <div class="leaves-section">
+        <div
+                class="leave-card"
+                *ngFor="let leave of filteredLeaves"
+        >
+            <div class="details">
+                <h3>Baixa Médica #{{ leave.id }}</h3>
+                <p><span>Diagnóstico:</span> {{ leave.diagnosis }}</p>
+                <p><span>Período:</span> {{ leave.period.start | date }} - {{ leave.period.end | date }}</p>
+                <p><span>Criado em:</span> {{ leave.createdAt | date }}</p>
+            </div>
+            <div class="status">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        [attr.fill]="
+            leave.status === 'active'
+              ? '#28a745'
+              : leave.status === 'expired'
+              ? '#d9534f'
+              : '#ffc107'
+          "
+                        viewBox="0 0 24 24"
+                >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M10 15l5-5-1.41-1.41L10 12.17l-1.59-1.58L7 12l3 3z" />
+                </svg>
+                <span [ngClass]="{ active: leave.status === 'active', expired: leave.status === 'expired', pending: leave.status === 'pending' }">
+          {{ leave.status }}
+        </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ação: Solicitar Nova Baixa -->
+    <div class="actions">
+        <button (click)="requestMedicalLeave()">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#fff"
+                    viewBox="0 0 24 24"
+            >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+            </svg>
+            Solicitar Nova Baixa
+        </button>
+    </div>
+</div>

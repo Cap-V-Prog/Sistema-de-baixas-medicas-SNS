@@ -1,0 +1,162 @@
+.patient-dashboard {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+
+  .header {
+    text-align: center;
+    padding: 10px;
+    background-color: #01624c;
+    color: #fff;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    padding-bottom: 0;
+    background-color: #f9f9f9;
+
+    button {
+      background: #fff;
+      color: #01624c;
+      border: 1px solid #01624c;
+      border-radius: 5px;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &.active {
+        background: #01624c;
+        color: #fff;
+      }
+
+      &:hover {
+        background: #014f3a;
+        color: #fff;
+        border-color: #014f3a;
+      }
+    }
+  }
+
+  .leaves-section {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 20px);
+    margin: 15px;
+    gap: 15px;
+    padding: 10px;
+
+    .leave-card {
+      flex: 1 1 calc(25% - 15px);
+      max-width: calc(25% - 15px);
+      min-height: 50%;
+      max-height: 50%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      .details {
+        h3 {
+          font-size: 18px;
+          color: #01624c;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #333;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .status {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+
+        span {
+          font-size: 14px;
+
+          &.active {
+            color: #28a745;
+          }
+
+          &.expired {
+            color: #d9534f;
+          }
+
+          &.pending {
+            color: #ffc107;
+          }
+        }
+      }
+    }
+  }
+
+  .actions {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #01624c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background: #014f3a;
+      }
+    }
+  }
+}

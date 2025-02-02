@@ -1,0 +1,136 @@
+.consultar-baixas-container {
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow-x: auto;
+
+  h1 {
+    text-align: center;
+    color: #01624c;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+
+      thead {
+        input {
+          width: 100%;
+          padding: 8px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          box-sizing: border-box;
+          &:focus {
+            outline: none;
+            border-color: #01624c;
+          }
+        }
+
+        th {
+          background-color: #01624c;
+          color: #fff;
+          text-align: left;
+          padding: 12px;
+          font-size: 14px;
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background-color: #f9f9f9; /* Cor clara */
+          }
+
+          &:nth-child(even) {
+            background-color: #ffffff; /* Branco */
+          }
+
+          &:hover {
+            background-color: #cce4ff; /* Azul claro */
+            cursor: pointer; /* Indicador de clique */
+          }
+        }
+
+        td {
+          padding: 12px;
+          font-size: 14px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+      text-align: center;
+      color: #01624c;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .cancel {
+        background: #ccc;
+      }
+
+      button:not(.cancel) {
+        background: #01624c;
+        color: white;
+      }
+    }
+  }
+}

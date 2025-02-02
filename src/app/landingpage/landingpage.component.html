@@ -1,0 +1,187 @@
+<div class="navbar">
+  <div class="wrapper">
+    <div class="logo" style="color: white">SNS Portugal</div>
+    <ul class="nav-links">
+      <li style="
+      display: flex;
+      align-items: center;
+      justify-content: center;">
+        <a href="#serviços">Serviços</a></li>
+      <li style="
+      display: flex;
+      align-items: center;
+      justify-content: center;"><a href="#sobre">Sobre</a></li>
+      <li style="
+      display: flex;
+      align-items: center;
+      justify-content: center;"><a href="#contact">Contato</a></li>
+    </ul>
+    <button routerLink="/login" class="login-btn" style="cursor: pointer; padding: 10px 20px; color: rgb(1, 98, 76); border: none; border-radius: 5px;background-color: #ecf0f1;">Login</button>
+  </div>
+</div>
+
+<header class="hero-section">
+  <div class="carousel">
+    <button class="prev carousel-btn" (click)="previousSlide()">&#10094;</button>
+    <div class="carousel-container">
+      <div
+        class="carousel-slide"
+        *ngFor="let slide of slides; let i = index"
+        [style.transform]="getTranslateX(i)"
+      >
+        <img [src]="slide.image" [alt]="slide.alt" />
+      </div>
+    </div>
+    <button class="next carousel-btn" (click)="nextSlide()">&#10095;</button>
+  </div>
+</header>
+
+
+<section class="info-cards" id="serviços">
+  <div class="wrapper">
+    <div class="card">
+      <svg fill="rgb(1, 98, 76)" version="1.1" id="Doctor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           width="200px" height="200px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+<path d="M206.243,38.157c0-15.695-12.769-28.463-28.463-28.463c-10.484,0-19.656,5.702-24.595,14.164
+	c-0.984-0.076-1.974-0.128-2.977-0.128c-13.41,0-25.21,6.86-32.1,17.27h31.352c0.355,3.568,1.378,6.94,2.932,10h-38.984
+	c-1.07,3.53-1.65,7.29-1.65,11.17c0,21.24,17.22,38.45,38.45,38.45c20.451,0,37.165-15.972,38.364-36.131
+	C198.929,60.228,206.243,50.033,206.243,38.157z M177.78,56.62c-10.181,0-18.463-8.282-18.463-18.463s8.282-18.463,18.463-18.463
+	s18.463,8.283,18.463,18.463S187.96,56.62,177.78,56.62z M177.863,31.017c3.943,0,7.14,3.197,7.14,7.14s-3.197,7.14-7.14,7.14
+	s-7.14-3.197-7.14-7.14S173.919,31.017,177.863,31.017z M196.333,112h-21.175L157,151.405V112h-14v39.482L124.845,112h-21.179
+	C76.28,112,54,134.281,54,161.667V269.5c0,12.406,10.093,22.5,22.5,22.5c6.512,0,12.388-2.781,16.5-7.218V292h114v-7.218
+	c4.112,4.437,9.987,7.218,16.5,7.218c12.406,0,22.5-10.094,22.5-22.5V161.667C246,134.281,223.72,112,196.333,112z M234,269.5
+	c0,5.79-4.71,10.5-10.5,10.5s-10.5-4.71-10.5-10.5V169h-18v111h-90V169H87v100.5c0,5.79-4.71,10.5-10.5,10.5S66,275.29,66,269.5
+	V161.667C66,140.897,82.897,124,103.667,124h13.488l32.808,71.35L182.842,124h13.491c20.77,0,37.667,16.897,37.667,37.667V269.5z"/>
+</svg>
+      <h3>Medicina</h3>
+      <p>Inclui várias especializações como Cardiologia, Neurologia, Ginecologia, Pediatria, entre outras.</p>
+    </div>
+    <div class="card">
+      <svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           viewBox="0 0 512 512"  xml:space="preserve">
+<style type="text/css">
+	.st0{fill:rgb(1, 98, 76);}
+</style>
+        <g>
+	<path class="st0" d="M217.593,157.745c23.164-5.908,37.133-29.497,31.209-52.677c-5.908-23.158-29.497-37.133-52.67-31.21
+		c-23.164,5.924-37.126,29.498-31.202,52.67C170.839,149.701,194.429,163.669,217.593,157.745z"/>
+          <path class="st0" d="M258.772,285.288l-2.924,30.642c5.152,3.432,9.893,7.287,14.098,11.476
+		c17.31,17.331,26.839,40.36,26.846,64.828c-0.007,24.468-9.536,47.488-26.846,64.828c-17.339,17.302-40.352,26.839-64.836,26.854
+		c-24.468-0.015-47.496-9.552-64.828-26.854c-10.954-10.968-18.908-24.528-23.195-39.421l-15.62,34.452
+		c21.392,36.959,61.04,59.889,103.643,59.904c66.025-0.015,119.763-53.738,119.77-119.762
+		C324.873,347.26,298.995,305.53,258.772,285.288z"/>
+          <path class="st0" d="M230.16,328.899l10.992-115.158c1.773-19.423-9.931-36.452-29.362-38.224
+		c-12.453-1.143-25.8,5.152-33.649,13.424l-54.071,53.222l-56.586,4.758c-9.098,0.765-16.09,8.363-16.09,17.483v1.06
+		c0,9.688,7.863,17.552,17.56,17.552h58.298c5.484,0,10.802-1.75,15.21-5.007l23.574-17.4l-5.076,56.162l-73.918,5.394
+		c-21.46,0.848-30.922,9.453-38.997,28.717L13.163,446.73c-5.287,11.748-0.038,25.574,11.718,30.853
+		c11.772,5.295,25.582,0.038,30.862-11.711l39.314-83.97h75.38C208.352,381.485,226.266,365.569,230.16,328.899z"/>
+          <path class="st0" d="M425.341,85.251c23.164-5.908,37.133-29.497,31.209-52.677c-5.908-23.158-29.497-37.133-52.67-31.217
+		c-23.172,5.931-37.126,29.505-31.209,52.678C378.588,77.207,402.169,91.175,425.341,85.251z"/>
+          <path class="st0" d="M497.623,291.985l-19.673-153.094c-5.03-38.148-49.193-47.178-74.297-24.096l-61.237,55.222l-58.602,22.044
+		c-9.014,3.311-13.854,13.106-10.999,22.279l0.212,0.704c2.803,9.014,12.09,14.347,21.294,12.219l45.125-12.37
+		c9.666-2.227,18.847-6.212,27.066-11.756l22.082-13.544l12.355,96.37c0.689,5.31-8.976,28.938-10.545,34.633l-49.442,154.223
+		c-3.894,12.067,2.696,25.021,14.756,28.982l0.833,0.265c11.409,3.75,23.771-1.879,28.445-12.923l55.587-134.656l13.4,134.474
+		c1.106,12.635,12.226,21.998,24.876,20.961l0.879-0.076c11.961-1,21.157-10.992,21.157-22.983L497.623,291.985z"/>
+</g>
+</svg>
+      <h3>Enfermagem</h3>
+      <p>Focada no cuidado direto aos pacientes, assistência em tratamentos médicos, educação em saúde, e promoção do bem-estar.</p>
+    </div>
+    <div class="card">
+      <svg fill="rgb(1, 98, 76)" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           viewBox="0 0 512.001 512.001" xml:space="preserve">
+<g>
+	<g>
+		<path d="M196.371,242.536l-78.681,10.473v5.144h0.234c64.986,0.001,14.168-0.083,82.216-0.083L196.371,242.536z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<circle cx="162.185" cy="34.967" r="34.967"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M244.139,196.35c-2.191-9.034-10.28-15.234-19.349-15.234c-1.86,0,1.152-0.33-44.664,5.77
+			c-2.324,18.791-19.826,32.5-38.928,29.745l-51.158-7.348c-1.185,3.034-1.645,6.4-1.185,9.858
+			c1.453,10.916,11.482,18.588,22.385,17.125l98.387-13.097l8.465,34.902h3.408c5.754-9.274,13.421-17.244,22.604-23.422
+			c2.634-1.772,5.362-3.363,8.161-4.787L244.139,196.35z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M375.564,240.004c-0.324-0.001-87.86,0-88.184,0c-21.882-0.002-41.564,11.783-51.819,30.332l138.258,13.11H208.767
+			c-9.171,0-16.607,7.435-16.607,16.607s7.436,16.607,16.607,16.607c183.103,0,176.889-0.12,176.889-0.12
+			c11.374,0.145,21.085-9.138,21.146-20.908l0.122-23.724C407.014,254.522,392.973,240.093,375.564,240.004z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M184.102,276.4c-2.831,0-141.209,0-148.547,0c-11.006,0-19.93,8.923-19.93,19.93c0,11.006,8.923,19.93,19.93,19.93
+			c4.877,0,137.306,0,142.559,0c-2.315-3.971-3.819-8.499-4.249-13.381C172.956,292.548,177.035,282.935,184.102,276.4z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M509.281,351.49c0-9.53-7.727-17.256-17.256-17.256c-11.964,0-458.758,0-472.05,0c-9.529,0-17.256,7.725-17.256,17.256
+			c0,8.092,5.578,14.863,13.093,16.728c-0.001,0.084-0.007,0.165-0.007,0.249v111.556c0,17.632,14.346,31.978,31.978,31.978
+			c9.529,0,17.256-7.725,17.256-17.256c0-8.67-6.393-15.845-14.722-17.07V371.001h411.365v106.675
+			c-8.329,1.225-14.722,8.401-14.722,17.07c0,9.53,7.727,17.256,17.256,17.256c17.633,0,31.978-14.346,31.978-31.978V368.467
+			c0-0.084-0.006-0.165-0.007-0.249C503.702,366.353,509.281,359.582,509.281,351.49z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M277.598,142.407L219.309,85.84c-3.148-3.055-7.362-4.764-11.748-4.764c-23.383,0-68.586,0-90.75,0
+			c-5.624,0-10.879,2.803-14.011,7.474l-32.611,48.624c-0.002,0.002-16.642,24.814-16.642,24.814
+			c-3.641,5.43-3.815,12.556-0.399,18.167c2.542,4.176,6.916,7.196,12.013,7.928l78.519,11.277
+			c9.244,1.328,17.782-5.12,19.097-14.301c1.324-9.223-5.078-17.773-14.301-19.098l-51.961-7.463
+			c10.728-15.996,10.358-15.444,21.176-31.574v16.99l33.264,4.777c12.395,1.779,22.336,9.954,26.865,20.899l29.231-4.536v-44.095
+			l38.237,37.108l-4.524,9.176c9.955,4.699,17.591,13.7,20.331,24.995l1.637,6.749l18.248-37.013
+			C284.217,155.409,282.85,147.505,277.598,142.407z"/>
+	</g>
+</g>
+        <g>
+	<g>
+		<path d="M496.822,289.908c-0.475-2.971-3.042-5.244-6.147-5.244h-11.107c8.481-6.362,13.997-16.473,14.067-27.893
+			c0.12-19.398-15.508-35.22-34.906-35.34c-0.075,0-0.148-0.001-0.222-0.001c-19.295,0.001-34.998,15.583-35.118,34.906
+			c-0.072,11.576,5.467,21.876,14.066,28.328h-7.94c-3.442,0-6.232,2.79-6.232,6.232c0,3.883,0,14.279,0,18.036
+			c0.002,3.443,2.793,6.234,6.235,6.234h61.158c3.442,0,6.232-2.79,6.232-6.232C496.908,289.819,496.963,290.785,496.822,289.908z"
+    />
+	</g>
+</g>
+</svg>
+      <h3>Fisioterapia</h3>
+      <p>Voltada para a reabilitação física, prevenção de lesões, e melhoria da mobilidade e qualidade de vida.</p>
+    </div>
+  </div>
+</section>
+<section class="extra-section" id="sobre">
+  <div class="wrapper">
+    <h2>Por que escolher o SNS?</h2>
+    <p>Escolher um serviço de saúde é uma decisão importante, e nós estamos aqui para garantir que tenha o melhor atendimento possível. O nosso compromisso é oferecer cuidados de qualidade, acessíveis e centrados no bem-estar de cada paciente.
+
+      Dispomos de uma equipa de profissionais altamente qualificados, que alia experiência e dedicação para proporcionar diagnósticos precisos e tratamentos eficazes. Investimos em tecnologia avançada para garantir um acompanhamento moderno, seguro e eficiente, permitindo que cada paciente receba a melhor abordagem para a sua saúde.
+
+      Além disso, acreditamos que um atendimento humanizado faz toda a diferença. Valorizamos a proximidade, a escuta ativa e o respeito por cada pessoa, garantindo um ambiente acolhedor e de confiança. Seja para consultas, exames, tratamentos ou acompanhamento contínuo, pode contar connosco para cuidar de si e da sua família com profissionalismo e dedicação.
+
+      Escolha um serviço de saúde que prioriza a sua qualidade de vida e bem-estar. Estamos aqui para si!</p>
+  </div>
+  </section>
+
+<section class="contact-section" id="contact">
+  <div class="wrapper">
+    <h2>Entre em contato</h2>
+    <form class="formulario">
+      <input type="text" placeholder="Seu Nome">
+      <input type="email" placeholder="Seu Email">
+      <input type="text" placeholder="Sua Mensagem">
+      <button type="submit">Enviar</button>
+      <p class="info-suport">Se precisar de mais informações ou tiver alguma dúvida, não hesite em entrar em contacto connosco. Estamos disponíveis para ajudar!</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p style="color: white">&copy; 2025 SNS Portugal. Todos os direitos reservados.</p>
+</footer>

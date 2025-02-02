@@ -1,0 +1,86 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+
+  .register-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    text-align: center;
+
+    h1 {
+      color: #01624c;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+
+      label {
+        display: block;
+        font-size: 14px;
+        color: #01624c;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+
+        &:focus {
+          border-color: #01624c;
+          outline: none;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #01624c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #014c3a;
+      }
+    }
+
+    .login-link {
+      margin-top: 10px;
+      font-size: 14px;
+
+      a {
+        color: #01624c;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
